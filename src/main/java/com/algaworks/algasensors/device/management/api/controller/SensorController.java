@@ -86,7 +86,7 @@ public class SensorController {
         sensorMonitoringClient.disableMonitoring(sensorId);
     }
 
-    @PatchMapping("/{sensorId}/enable")
+    @PutMapping("/{sensorId}/enable")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void enable(@PathVariable TSID sensorId) {
         Sensor sensor = sensorRepository.findById(new SensorId(sensorId))
@@ -97,7 +97,7 @@ public class SensorController {
         sensorMonitoringClient.enableMonitoring(sensorId);
     }
 
-    @PatchMapping("/{sensorId}/disable")
+    @PutMapping("/{sensorId}/disable")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void disable(@PathVariable TSID sensorId) {
         Sensor sensor = sensorRepository.findById(new SensorId(sensorId))
